@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using BookingWebSite.Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BookingWebSite.Models
+namespace BookingWebSite.Data.Concrete.EntityFramework.Contexts
 {
-    public partial class booking1661514677722bnfhkxzqhfmuxqllContext : DbContext
+    public partial class Context : DbContext
     {
-        public booking1661514677722bnfhkxzqhfmuxqllContext()
+        public Context()
         {
         }
 
-        public booking1661514677722bnfhkxzqhfmuxqllContext(DbContextOptions<booking1661514677722bnfhkxzqhfmuxqllContext> options)
+        public Context(DbContextOptions<Context> options)
             : base(options)
         {
         }
