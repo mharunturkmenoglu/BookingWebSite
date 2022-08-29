@@ -2,7 +2,7 @@
 {
     public interface IUnitOfWork : IAsyncDisposable
     {
-        IAppartmentRepository Appartments { get; }
+        IApartmentRepository Appartments { get; }
         IBookingRepository Bookings { get; }
         ICompanyRepository Companies { get; }
         IUserRepository Users { get; }

@@ -17,7 +17,7 @@ namespace BookingWebSite.Data.Concrete.EntityFramework.Contexts
         {
         }
 
-        public virtual DbSet<Appartment> Appartments { get; set; } = null!;
+        public virtual DbSet<Apartment> Appartments { get; set; } = null!;
         public virtual DbSet<Booking> Bookings { get; set; } = null!;
         public virtual DbSet<Company> Companies { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
@@ -33,7 +33,7 @@ namespace BookingWebSite.Data.Concrete.EntityFramework.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Appartment>(entity =>
+            modelBuilder.Entity<Apartment>(entity =>
             {
                 entity.ToTable("appartments");
 

@@ -7,7 +7,7 @@ namespace BookingWebSite.Data.Concrete.EntityFramework
     public class UnitOfWork : IUnitOfWork
     {
         private readonly Context _context;
-        private EfAppartmentRepository _appartmentRepository;
+        private EfApartmentRepository _appartmentRepository;
         private EfBookingRepository _bookingRepository;
         private EfCompanyRepository _companyRepository;
         private EfUserRepository _userRepository;
@@ -17,7 +17,7 @@ namespace BookingWebSite.Data.Concrete.EntityFramework
             _context = context;
         }
 
-        public IAppartmentRepository Appartments => _appartmentRepository ?? new EfAppartmentRepository(_context);
+        public IApartmentRepository Appartments => _appartmentRepository ?? new EfApartmentRepository(_context);
 
         public IBookingRepository Bookings => _bookingRepository ?? new EfBookingRepository(_context);
 

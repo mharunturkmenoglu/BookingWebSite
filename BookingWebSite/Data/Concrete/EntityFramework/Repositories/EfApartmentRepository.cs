@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookingWebSite.Data.Concrete.EntityFramework.Repositories
 {
-    public class EfAppartmentRepository : EfEntityRepositoryBase<Appartment>, IAppartmentRepository
+    public class EfApartmentRepository : EfEntityRepositoryBase<Apartment>, IApartmentRepository
     {
-        public EfAppartmentRepository(DbContext context) : base(context)
+        public EfApartmentRepository(DbContext context) : base(context)
         {
         }
     }
