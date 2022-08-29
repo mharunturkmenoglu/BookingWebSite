@@ -3,7 +3,7 @@ using BookingWebSite.Entities.Concrete;
 
 namespace BookingWebSite.Data.Abstract
 {
-    public interface IAppartmentRepository : IEntityRepository<Appartment>
+    public interface IApartmentRepository : IEntityRepository<Apartment>
     {
     }
 }
