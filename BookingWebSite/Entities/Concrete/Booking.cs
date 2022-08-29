@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BookingWebSite.Entities.Abstract;
 
-namespace BookingWebSite.Models
+namespace BookingWebSite.Entities.Concrete
 {
-    public partial class Booking
+    public partial class Booking : IEntity
     {
         public int? Id { get; set; }
         public int? UserId { get; set; }
