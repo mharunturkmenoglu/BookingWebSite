@@ -1,4 +1,8 @@
-using BookingWebSite.Data.Concrete.EntityFramework.Context;
+using BookingWebSite.Data.Abstract;
+using BookingWebSite.Data.Concrete.EntityFramework;
+using BookingWebSite.Data.Concrete.EntityFramework.Contexts;
+using BookingWebSite.Services.Abstract;
+using BookingWebSite.Services.Concrete;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,8 +14,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var connectionString = builder.Configuration.GetConnectionString("LocalDB");
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<Context>(options => options.UseNpgsql(connectionString));
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IUserService, UserManager>();
+builder.Services.AddScoped<IApartmentService, ApartmentManager>();
+builder.Services.AddScoped<IBookingService, BookingManager>();
+builder.Services.AddScoped<ICompanyService, CompanyManager>();
 
 var app = builder.Build();
 
